@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+    <div class="row my-3">
+
+        {% if user_list %}
+            {% for user in user_list %}
+                <div class="col-3">
+                    <div class="card">
+                        <img class="card-img-top" src="https://images.interactives.dk/missing-image.png" alt="user photo">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ user.get_full_name }}</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="/cabinet/{{ user.id }}" class="btn btn-primary">Show files</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col"><span class="text-muted">No users found</span></div>
+        {% endif %}
+
+    </div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

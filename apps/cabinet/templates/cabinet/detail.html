@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+    <div class="row my-3">
+        <div class="col">
+
+            {% if user_file_list %}
+                <ul class="list-group list-group-flush">
+
+                    {% for user_file in user_file_list %}
+                        <li class="list-group-item">
+                            <a href="/cabinet/download/{{ user_file.id }}"
+                               download="{{ user_file.title }}"
+                            >{{ user_file.title }}</a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            {% else %}
+                <span class="text-muted">No user files found</span>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
