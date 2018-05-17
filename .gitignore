@@ -9,8 +9,8 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
-compiled_static/
-node_modules/
+/compiled_static/
+/node_modules/
 develop-eggs/
 dist/
 downloads/
@@ -26,8 +26,8 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
-.idea/
-uploads/
+/.idea/
+/uploads/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
